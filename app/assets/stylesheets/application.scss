@@ -1,3 +1,8 @@
+// Boostrap
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+//Base
+@import "base/general";
+//Partials
+@import "partials/layout/*";
