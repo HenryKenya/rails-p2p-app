@@ -17,6 +17,7 @@ gem 'sass-rails', '~> 5.0'
 
 # Boostrap saas
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'bootstrap_form'
 
 # Jquery for rails
 gem 'jquery-rails'
