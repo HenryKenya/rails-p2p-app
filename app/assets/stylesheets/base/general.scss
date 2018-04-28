@@ -5,6 +5,9 @@
 html {
   font-size: 62.5%;
 }
+a:hover, a:focus, a:active{
+  color: $primaryColor !important;
+}
 body {
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
     font-size: 13px;
@@ -31,6 +34,49 @@ body {
     text-decoration: none;
   }
 
-  .control-label {
+  .control-label, .hidden {
     display: none;
   }
+  .btn-main{
+    width: 30%;
+    font-weight: bold;
+    transition: all-ease-in 0.3s;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  }
+  .btn-main:hover{
+    box-shadow: none !important;
+  }
+  .brand-color{
+    color: $primaryColor;
+  }
+
+  .login{
+    margin: 50px 0 20px 0;
+    background-color: $primaryColor;
+    color: #fff !important;
+  }
+  .separator{
+    background: none;
+    height: 60px;
+    position: relative;
+    text-align: center;
+  }
+  .separator-text{
+    background-color: #fff;
+    display: inline-block;
+    padding: 8px
+  }
+  .separator-line{
+    border: 0;
+    border-top: 1px solid #dce0e0;
+    margin: -16px auto 10px;
+    width: 30%;
+  }
+  .shared-links{
+    padding: 20px;
+    display: inline;
+    text-align: center
+  }
+
+

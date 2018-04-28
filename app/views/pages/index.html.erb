@@ -1,1 +1,17 @@
-<h1>Homepage</h1>
+<div class="container text-center">
+    <h1>Welcome to <span class="brand-color">Zeecash!</h1>
+    <h4>Deposit directly from M-Pesa, transfer to your friend or withdraw!</h4>
+
+    <!--<p>Zeecash is an easy to use p2p platform that allows users to transfer cash between themselves at no extra cost. <br>
+    You can deposit cash directly from your M-Pesa, transfer to your friends (choose from drop-down list) and withdraw to your M-Pesa. 
+    </p>-->
+
+    <%= button_to "Log In", login_path, :class => "btn btn-main login", :method => :get  %>
+    <div class="separator">
+        <span class="separator-text">or</span>
+        <hr class="separator-line">
+    </div>
+
+    <%= button_to "Create Account", signup_path, :class => "btn btn-main signup", :method => :get  %>
+
+</div>

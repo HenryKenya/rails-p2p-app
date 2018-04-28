@@ -1,0 +1,41 @@
+<div class="container">
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    <div class="col-sm-12 transaction-form">
+        <h1 class="text-center">Start here</h1>
+        <h3 class="text-center">Perfom transaction</h3>
+        <form class="form-inline" method="POST" ="/transaction">
+            <div class="form-group">
+                <label class="sr-only" for="amount">Amount (in kenyan shillings)</label>
+                <div class="input-group">
+                    <div class="input-group-addon">Ksh.</div>
+                    <input type="text" class="form-control" id="amount" placeholder="Amount" name="transaction[amount]">
+                    <div class="input-group-addon">.00</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="sr-only" for="type">Transaction Type</label>
+                <select id="type" class="selectpicker"> 
+                  <% @categories.each do |category| %>
+                    <option><%= category.name %></option>
+                     <span class="hidden" name="transaction[category_id]"><%= category.id %></span>
+                  <% end %>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="sr-only" for="recipients">Select Recipient</label>
+                <select id="recipient" class="selectpicker"> 
+                  <% @users.each do |user| %>
+                    <option><%= user.email %></option>
+                   <span class="hidden" name="transaction[recipient_id]"><%= user.id %></span>
+                  <% end %>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-transaction">Complete transaction</button>
+        </form>
+    </div>
+</div>
