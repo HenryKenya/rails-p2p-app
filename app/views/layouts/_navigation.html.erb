@@ -16,7 +16,7 @@
     <div class="collapse navbar-collapse navbar-right" id="navbar-collapse-content">
       <ul class="nav navbar-nav">
          <% if user_signed_in? %>
-            <li><%=link_to 'New', dashboard_path %></li>
+            <li><a href="#!">New</a></li>
             <li class="dropdown pc-menu">
               <a id="user-settings" class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <span id="user-name"><%= current_user.email %></span>
