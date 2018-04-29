@@ -1,5 +1,5 @@
 <div class="container">
-<h1 class="text-center">Deposit, transfer or withdraw</h1>
+<h1 class="text-center">Deposit, transfer or withdraw <sup class="alpha">alpha</sup></h1>
 <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
@@ -19,7 +19,7 @@
                         <%= select_tag 'transaction[recipient_id]', options_for_select(@users.collect{ |u| [u.email, u.id]}), class: 'selectpicker' %>
                  </div>
                     <%= f.hidden_field :sender_id, :value => @id%>
-                    <%= f.submit "Complete transaction", class: 'btn btn-transaction' %>
+                    <%= f.submit "Perfom transaction", class: 'btn btn-transaction' %>
                 <% end %>
         </div>
     </div>
