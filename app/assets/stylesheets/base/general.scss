@@ -78,5 +78,10 @@ body {
     display: inline;
     text-align: center
   }
+  .alert {
+    text-align: center;
+    font-weight: bold;
+    color: $primaryColor;
+  }
 
 

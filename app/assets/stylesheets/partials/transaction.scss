@@ -2,8 +2,18 @@
     margin-top: 80px;
 }
 .btn-transaction{
-    font-weight: bold;
+    margin-top: 20px;
     background-color: $primaryColor;
-    color: #fff;
+    color: #fff !important;
     text-transform: capitalize;
+    font-weight: bold;
+    transition: all-ease-in 0.3s;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+}
+.btn-transaction:hover{
+    box-shadow: none;
+}
+.form-space{
+    margin: 20px
 }
