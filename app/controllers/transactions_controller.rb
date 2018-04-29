@@ -3,5 +3,9 @@ class TransactionsController < ApplicationController
     def new
         @categories = Category.all
         @users = User.all
+        @transaction = Transaction.new
+    end
+
+    def create
     end
 end
