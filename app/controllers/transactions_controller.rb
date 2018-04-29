@@ -12,10 +12,10 @@ class TransactionsController < ApplicationController
         @transaction = Transaction.new(transaction_params)
         if @transaction.save
             flash[:success] = "Transaction successful!"
-            redirect_to '/dashboard'
+            redirect_to new_transaction_path
         else
             flash[:error] = "Something went wrong!"
-            redirect_to '/dashboard'
+            redirect_to new_transaction_path
         end
     end
 
