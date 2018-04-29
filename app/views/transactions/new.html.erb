@@ -2,10 +2,11 @@
 <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
+
     <div class="col-sm-12 transaction-form">
         <h1 class="text-center">Start here</h1>
         <h3 class="text-center">Perfom transaction</h3>
-        <form class="form-inline" method="POST" ="/transaction">
+        <!--<form class="form-inline" method="POST" ="/transaction">
             <div class="form-group">
                 <label class="sr-only" for="amount">Amount (in kenyan shillings)</label>
                 <div class="input-group">
@@ -36,6 +37,12 @@
             </div>
 
             <button type="submit" class="btn btn-transaction">Complete transaction</button>
-        </form>
+        </form>-->
+        <%= bootstrap_form_for(@user) do |f| %>
+            <%= f.email_field :email %>
+            <%= f.password_field :password %>
+            <%= f.check_box :remember_me %>
+            <%= f.submit "Log In" %>
+        <% end %>
     </div>
 </div>
