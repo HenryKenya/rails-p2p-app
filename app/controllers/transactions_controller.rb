@@ -11,15 +11,16 @@ class TransactionsController < ApplicationController
         
         @transaction = Transaction.new(transaction_params)
         if @transaction.save
-            render json: params
+            flash[:success] = "Transaction successful!"
+            redirect_to '/dashboard'
         else
-            render json: params
+            flash[:error] = "Something went wrong!"
+            redirect_to '/dashboard'
         end
     end
 
     private
         def transaction_params
-
             params.require(:transaction).permit(:amount, :category_id, :sender_id, :recipient_id)
         end
 end
