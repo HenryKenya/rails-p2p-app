@@ -16,6 +16,6 @@ class RegistrationsController < Devise::RegistrationsController
         end
     
         def after_sign_up_path_for(resource)
-            '/dashboard'
+            new_transaction_path
           end
 end

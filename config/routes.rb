@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   # get '/dashboard' => 'transactions#index'
   # post '/transaction' => 'transactions#create'
-  get '/dashboard' => "transactions#new"
   resources :transactions
   
   # change devise routes
