@@ -6,7 +6,7 @@
             <%= f.text_field :amount %>
             <%= select_tag 'transaction[category_id]', options_for_select(@categories.collect{ |c| [c.name, c.id]}) %>
             <%= select_tag 'transaction[recipient_id]', options_for_select(@users.collect{ |u| [u.email, u.id]}) %>
-            <%= f.hidden_field :sender_id %> 
+            <%= f.hidden_field :sender_id, :value => @id%>
             <%= f.submit "Complete transaction" %>
         <% end %>
     </div>

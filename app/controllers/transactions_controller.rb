@@ -1,15 +1,15 @@
 class TransactionsController < ApplicationController
     before_action :authenticate_user!
     def new
+        @transaction = Transaction.new
         @categories = Category.all
         @users = User.all
-        @transaction = Transaction.new
+        @id = User.find_by_id(current_user).id
     end
 
     def create
         
         @transaction = Transaction.new(transaction_params)
-        @transaction.sender_id = current_user.id
         if @transaction.save
             render json: params
         else
