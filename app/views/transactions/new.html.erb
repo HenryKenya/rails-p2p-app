@@ -12,11 +12,10 @@
                  </div>
                  </div>
                  <div class="form-group form-space"> 
-                        <%= select_tag 'transaction[category_id]', options_for_select(@categories.collect{ |c| [c.name, c.id]}),
-                        class: 'selectpicker' %> 
+                        <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Transaction type", class: "selectpicker"%>
                  </div>
                  <div class="form-group form-space">
-                        <%= select_tag 'transaction[recipient_id]', options_for_select(@users.collect{ |u| [u.email, u.id]}), class: 'selectpicker' %>
+                        <%= f.collection_select :recipient_id, User.all, :id, :email, :prompt => "Recipient", class: "selectpicker"%>
                  </div>
                     <%= f.hidden_field :sender_id, :value => @id%>
                     <%= f.submit "Perfom transaction", class: 'btn btn-transaction' %>
