@@ -3,7 +3,7 @@ class CreateTransactions < ActiveRecord::Migration[5.1]
     create_table :transactions do |t|
       t.integer :amount
       t.references :user
-      t.references :category_id
+      t.references :category
       t.timestamps
     end
 
