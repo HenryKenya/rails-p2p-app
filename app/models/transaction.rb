@@ -16,7 +16,7 @@ class Transaction < ApplicationRecord
   end
 
   def send_email
-    TransactionMailer.transaction_confirmation(self.recipient).deliver
+    TransactionMailer.transaction_confirmation(self.recipient, self.sender).deliver
   end
 
 end

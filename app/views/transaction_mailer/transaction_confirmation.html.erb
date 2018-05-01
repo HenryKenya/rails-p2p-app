@@ -1,5 +1,7 @@
-<h1>Transaction#transaction_confirmation</h1>
+<h1>New Transaction Confirmation</h1>
 
 <p>
-  <%= @greeting %>, find me in app/views/transaction_mailer/transaction_confirmation.html.erb
+  Greets <%= @recipient %>. New transaction has been made with the following details: <br>
+  <strong>Amount:</strong> Ksh. <%= @transaction.amount %> <br>
+  <strong>Sender: </strong> <%= @sender %>
 </p>
