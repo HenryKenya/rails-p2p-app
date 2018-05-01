@@ -14,11 +14,7 @@ class TransactionsController < ApplicationController
 
     def create   
         @transaction = Transaction.new(transaction_params)
-        sender = User.find(@transaction.sender_id)
-        recipient = User.find(@transaction.recipient_id)
-        test =  (@sender_balance - @transaction.amount)
         if @transaction.save
-            sender.update_attributes(balance: test)
             flash[:success] = "Transaction successful!"
             redirect_to new_transaction_path
         else
@@ -37,7 +33,6 @@ class TransactionsController < ApplicationController
             @users = User.all # call all users for display in select
             @sender_id =User.find_by_id(current_user).id
             @sender_balance = User.find_by_id(current_user).balance
-
         end
 
         
