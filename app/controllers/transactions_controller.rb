@@ -38,6 +38,7 @@ class TransactionsController < ApplicationController
             @users = User.all # call all users for display in select
             @sender_id =User.find_by_id(current_user).id
             @sender_balance = User.find_by_id(current_user).balance
+            
         end
 
         
