@@ -4,6 +4,7 @@ class Transaction < ApplicationRecord
   belongs_to :recipient, foreign_key: :recipient_id, class_name: 'User'
 
   before_save :check_and_update_balance
+  after_create :send_email
 
   def check_and_update_balance
     recipient = User.find(recipient_id)
@@ -12,6 +13,10 @@ class Transaction < ApplicationRecord
     recipient.balance ||= 0
     sender.update_attributes(balance: sender.balance - amount) 
     recipient.update_attributes(balance: recipient.balance + amount)
+  end
+
+  def send_email
+    TransactionMailer.transaction_confirmation(self.recipient).deliver
   end
 
 end
