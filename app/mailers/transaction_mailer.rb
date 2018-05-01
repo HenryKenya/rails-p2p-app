@@ -3,6 +3,9 @@ class TransactionMailer < ApplicationMailer
   def transaction_confirmation(recipient, sender)
     @recipient = recipient.email
     @transaction = recipient.transactions.last
+    if !@transaction.nil?
+      @amount = @transaction.amount
+    end
     @sender = sender.email
     mail(:to => "<#{recipient.email}>", :subject => "New Transaction")
   end
