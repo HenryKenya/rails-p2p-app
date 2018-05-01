@@ -16,8 +16,8 @@ class TransactionsController < ApplicationController
         @transaction = Transaction.new(transaction_params)
         sender = User.find(@transaction.sender_id)
         recipient = User.find(@transaction.recipient_id)
-        sender.attributes({:balance => balance: @sender_balance - @transaction.amount})
-        recipient.attributes({:balance => balance: recipient.balance - @transaction.amount})
+        sender.attributes({:balance => @sender_balance - @transaction.amount})
+        recipient.attributes({:balance => recipient.balance - @transaction.amount})
 
         if @transaction.save
             flash[:success] = "Transaction successful!"
