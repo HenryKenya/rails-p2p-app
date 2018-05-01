@@ -14,13 +14,12 @@ class TransactionsController < ApplicationController
 
     def create   
         @transaction = Transaction.new(transaction_params)
+        sender = User.find(@transaction.sender_id)
+        recipient = User.find(@transaction.recipient_id)
+        sender.attributes(balance: @sender_balance - @transaction.amount)
+        recipient.attributes(balance: recipient.balance + @transaction.amount)
+        
         if @transaction.save
-
-            sender = User.find(@transaction.sender_id)
-            recipient = User.find(@transaction.recipient_id)
-            sender.update_attributes(balance: @sender_balance - @transaction.amount)
-            recipient.update_attributes(balance: recipient.balance + @transaction.amount)
-
             flash[:success] = "Transaction successful!"
             redirect_to new_transaction_path
         else
