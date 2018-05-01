@@ -8,8 +8,10 @@ class Transaction < ApplicationRecord
   def check_and_update_balance
     recipient = User.find(recipient_id)
     sender = User.find(sender_id)
-    sender.update_attributes(balance: sender.balance - amount)
-    
+    sender.balance ||= 0
+    recipient.balance ||= 0
+    sender.update_attributes(balance: sender.balance - amount) 
+    recipient.update_attributes(balance: recipient.balance + amount)
   end
 
 end
