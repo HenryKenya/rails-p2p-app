@@ -2,7 +2,9 @@ class TransactionsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_variables
     
-
+    def index
+        @transactions = Transaction.all
+    end
     def new
         @transaction = Transaction.new
         if @sender_balance.nil?
@@ -18,7 +20,7 @@ class TransactionsController < ApplicationController
             recipient = User.find(@transaction.recipient_id)
             sender.update_attributes(balance: @sender_balance - @transaction.amount)
             recipient.update_attributes(balance: recipient.balance + @transaction.amount)
-            
+
             flash[:success] = "Transaction successful!"
             redirect_to new_transaction_path
         else
