@@ -17,3 +17,11 @@ nav {
 .navbar-with-border{
   border-left: 1px solid #e2e6e9;
 }
+.navbar-with-border-right{
+  border-right: 1px solid #e2e6e9;
+  border-left: 1px solid #e2e6e9;
+}
+.navbar-with-border-right a{
+  color: $primaryColor !important;
+  font-weight: bold;
+}

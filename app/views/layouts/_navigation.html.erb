@@ -16,8 +16,9 @@
     <div class="collapse navbar-collapse navbar-right" id="navbar-collapse-content">
       <ul class="nav navbar-nav">
          <% if user_signed_in? %>
-            <li><a href="#!">New</a></li>
-            <li class="dropdown pc-menu">
+            <li class="navbar-with-border-right"><a href="#!">Ksh. <%= current_user.balance %></a></li>
+            <li class=""><%= link_to 'New', new_transaction_path %></li>
+            <li class="dropdown pc-menu navbar-with-border">
               <a id="user-settings" class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <span id="user-name"><%= current_user.email %></span>
                 <span class="caret"></span>
