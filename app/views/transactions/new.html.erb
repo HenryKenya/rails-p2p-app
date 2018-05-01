@@ -3,6 +3,7 @@
 <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
+      <h4 class="text-center"><strong>Balance:</strong> <%= @sender_balance %></h4>
        <div class="col-sm-12 transaction-form">
                 <%= bootstrap_form_for(@transaction, :html => {:class => "form-inline"}) do |f| %>
                  <div class="form-group form-space">
@@ -17,7 +18,7 @@
                  <div class="form-group form-space">
                         <%= f.collection_select :recipient_id, User.all, :id, :email, :prompt => "Recipient", class: "selectpicker"%>
                  </div>
-                    <%= f.hidden_field :sender_id, :value => @id%>
+                    <%= f.hidden_field :sender_id, :value => @sender_id%>
                     <%= f.submit "Perfom transaction", class: 'btn btn-transaction' %>
                 <% end %>
         </div>
